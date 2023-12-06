@@ -2114,7 +2114,9 @@ iframe {
       .feedback__form {
         width: 90%; } }
     .feedback__form input.invalid {
-      background-color: #ffb32c; }
+      border: 3px solid #fb5555; }
+    .feedback__form input.error {
+      border: 3px solid #fb5555; }
     .feedback__form input[type="text"] {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 15px);
@@ -2146,5 +2148,7 @@ iframe {
               flex: 1 0 100%;
       padding: 16px 20px;
       font-size: 20px; }
+      .feedback__form textarea.error {
+        border: 3px solid #fb5555; }
 
 /*# sourceMappingURL=main.css.map */

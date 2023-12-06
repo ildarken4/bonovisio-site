@@ -560,13 +560,26 @@ var message = document.getElementById('message');
 var formSubmit = document.getElementById('submit');
 formSubmit.addEventListener('click', function () {
   var isValid = validateEmail(email.value);
-  if (isValid) {
-    email.classList.remove('invalid');
-    console.log('Имя: ' + name.value);
-    console.log('Email: ' + email.value);
-    console.log('Сообщение: ' + message.value);
+  if (name.value.length == 0) {
+    name.classList.add('error');
   } else {
-    email.classList.add('invalid');
+    name.classList.remove('error');
+    if (message.value.length == 0) {
+      message.classList.add('error');
+    } else {
+      message.classList.remove('error');
+      if (isValid) {
+        email.classList.remove('invalid');
+        console.log('Имя: ' + name.value);
+        console.log('Email: ' + email.value);
+        console.log('Сообщение: ' + message.value);
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      } else {
+        email.classList.add('invalid');
+      }
+    }
   }
 });
 Object(_vendor_ie_fix__WEBPACK_IMPORTED_MODULE_3__["ieFix"])();
